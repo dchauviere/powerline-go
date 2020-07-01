@@ -71,6 +71,8 @@
   "NixShellBg": 69,
   "DurationFg": 250,
   "DurationBg": 237,
+  "PaasCfFg": 15,
+  "PaasCfBg": 22,
   "HostnameColorizedFgMap": {
     "0": 250,
     "1": 250,

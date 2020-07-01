@@ -141,4 +141,8 @@ type Theme struct {
 
 	DurationFg uint8
 	DurationBg uint8
+
+	PaasCfFg uint8
+	PaasCfBg uint8
+
 }

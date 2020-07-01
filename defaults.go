@@ -197,6 +197,9 @@ var themes = map[string]Theme{
 		DurationFg: 250,
 		DurationBg: 237,
 
+		PaasCfFg: 15,
+		PaasCfBg: 22,
+
 		HostnameColorizedFgMap: map[uint8]uint8{
 			0:   250,
 			1:   250,
