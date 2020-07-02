@@ -73,6 +73,8 @@ type Theme struct {
 	RepoCleanBg uint8
 	RepoDirtyFg uint8
 	RepoDirtyBg uint8
+	RepoConflictFg uint8
+	RepoConflictBg uint8
 
 	JobsFg uint8
 	JobsBg uint8
@@ -87,21 +89,6 @@ type Theme struct {
 
 	GCPFg uint8
 	GCPBg uint8
-
-	GitAheadFg      uint8
-	GitAheadBg      uint8
-	GitBehindFg     uint8
-	GitBehindBg     uint8
-	GitStagedFg     uint8
-	GitStagedBg     uint8
-	GitNotStagedFg  uint8
-	GitNotStagedBg  uint8
-	GitUntrackedFg  uint8
-	GitUntrackedBg  uint8
-	GitConflictedFg uint8
-	GitConflictedBg uint8
-	GitStashedFg    uint8
-	GitStashedBg    uint8
 
 	VirtualEnvFg uint8
 	VirtualEnvBg uint8

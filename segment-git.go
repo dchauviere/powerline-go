@@ -22,8 +22,16 @@ type repoStats struct {
 	stashed    int
 }
 
-func (r repoStats) dirty() bool {
-	return r.untracked+r.notStaged+r.staged+r.conflicted > 0
+func (r repoStats) GitStatusColors(p *powerline) (uint8, uint8) {
+	if r.conflicted > 0 {
+		return p.theme.RepoConflictFg, p.theme.RepoConflictBg
+	}
+
+	if r.staged + r.notStaged > 0 {
+		return p.theme.RepoDirtyFg, p.theme.RepoDirtyBg
+	}
+
+	return p.theme.RepoCleanFg, p.theme.RepoCleanBg
 }
 
 func addRepoStats(nChanges int, symbol string) string {
@@ -205,13 +213,7 @@ func segmentGit(p *powerline) []pwl.Segment {
 	}
 
 	var foreground, background uint8
-	if stats.dirty() {
-		foreground = p.theme.RepoDirtyFg
-		background = p.theme.RepoDirtyBg
-	} else {
-		foreground = p.theme.RepoCleanFg
-		background = p.theme.RepoCleanBg
-	}
+	foreground, background = stats.GitStatusColors(p)
 
 	out, err = runGitCommand("git", "rev-list", "-g", "refs/stash")
 	if err == nil && len(out) > 0 {

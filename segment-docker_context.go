@@ -30,6 +30,10 @@ func segmentDockerContext(p *powerline) []pwl.Segment {
 		}
 	}
 
+	if context == "default" {
+		return nil
+	}
+
 	return []pwl.Segment{{
 		Name:       "docker-context",
 		Content:    "🐳" + context,
